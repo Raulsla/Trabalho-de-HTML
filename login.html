@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login_style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="form-image">
+            <img src="img/undraw_medicine_b-1-ol.svg" alt="Imagem">
+        </div>
+
+        <div class="form">
+
+            <div class="form-container">
+
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Login</h1>
+                    </div>
+                </div>
+
+                <form action="processar_login.php" method="POST">
+
+                    <div class="input-group">
+                    
+                        <div class="input-box">
+                            <label for="username">Usuário</label>
+                            <input id="username" type="text" name="username" placeholder="Digite seu nome de usuário" required>
+                        </div>
+                        <div class="underline"></div>
+
+                        <div class="input-box2">
+                            <label for="password">Senha</label>
+                            <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                        </div>
+                        <div class="underline"></div>
+
+                        <div class="forgotpassword-button">
+                            <a href="#">Esqueci minha senha</a>
+                        </div>
+                    </div>
+                    <div class="Continuar">    
+                        <input type="submit" value="Continuar">
+                    </div>
+                    
+                </form>
+
+                <div class="footer">
+
+                    <span>Conecte-se com Redes Sociais</span>
+
+                    <div class="social-field">
+                        <div class="social-fields-twitter">
+                            <a href="#">
+                                <img src="img/twitter.svg" alt="Twitter image">
+                                Entrar com Twitter
+                            </a>
+                        </div>
+
+                        <div class="social-fields-insta">
+                            <a href="#">
+                                <img src="img/insta.svg" alt="Instagram image">
+                                Entrar com Instagram
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const erro = urlParams.get("erro");
+    
+        if (erro === "1") {
+            const errorMessage = document.getElementById("error-message");
+            errorMessage.textContent = "Usuário e/ou senha incorretos. Por favor, tente novamente.";
+        }
+    </script>
+</body>
+</html>
